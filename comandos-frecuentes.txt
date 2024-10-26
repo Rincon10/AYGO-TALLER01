@@ -1,0 +1,6 @@
+mvn archetype:generate -DgroupId=com.example -DartifactId=myapp -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+
+mvn exec:java -Dexec.mainClass="org.jgroups.demos.Draw"
+
+mvn exec:java -D exec.mainClass="org.jgroups.demos.Draw"
