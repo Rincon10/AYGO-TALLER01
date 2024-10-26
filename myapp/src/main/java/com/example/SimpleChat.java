@@ -51,7 +51,7 @@ public class SimpleChat implements Receiver {
     private void start() throws Exception {
         channel=new JChannel().setReceiver(this);
         channel.connect("ChatCluster");
-        channel.getState(null, 10000);
+        channel.getState(null, 10000);//capture el estado, en que estados estan todos
         eventLoop();
         channel.close();
     }

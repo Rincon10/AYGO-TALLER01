@@ -4,3 +4,5 @@ mvn archetype:generate -DgroupId=com.example -DartifactId=myapp -DarchetypeArtif
 mvn exec:java -Dexec.mainClass="org.jgroups.demos.Draw"
 
 mvn exec:java -D exec.mainClass="org.jgroups.demos.Draw"
+
+mvn exec:java -D exec.mainClass="com.exmple.SimpleChat
