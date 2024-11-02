@@ -61,12 +61,9 @@ vamos a crear la imagen docker:
 docker build --tag rincon10/servicio-chats:1.0 .
 ```
 
-creamos la network por lo cual se van a comunicar los contenedores
-```bash
-docker network create chat-network
-```
 
-entonces ejecutamos 
+
+entonces ahora ejecutamos  la imagen que se creo a partir del dockerFile que tenemos
 
 intancia 1
 ```bash

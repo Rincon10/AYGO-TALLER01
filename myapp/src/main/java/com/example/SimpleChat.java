@@ -49,7 +49,13 @@ public class SimpleChat implements Receiver {
 
 
     private void start() throws Exception {
-        channel=new JChannel().setReceiver(this);
+        String configFile = System.getenv("USE_JGROUPS_TCP") != null ? "jgroups-tcp.xml" : null;
+
+        if (configFile != null) {
+            channel = new JChannel(configFile).setReceiver(this); // Usar jgroups-tcp.xml si está en Docker
+        } else {
+            channel = new JChannel().setReceiver(this); // Usar configuración predeterminada
+        }
         channel.connect("ChatCluster");
         channel.getState(null, 10000);//capture el estado, en que estados estan todos
         eventLoop();
