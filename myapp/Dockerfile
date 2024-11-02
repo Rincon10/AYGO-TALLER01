@@ -23,6 +23,6 @@ WORKDIR /app
 COPY --from=builder /home/maven/app/target/myapp-1.0-SNAPSHOT.jar /app/myapp-1.0-SNAPSHOT.jar
 COPY --from=builder /home/maven/app/jgroups-tcp.xml /app/jgroups-tcp.xml
 
-ENV USE_JGROUPS_TCP=true
+#ENV USE_JGROUPS_TCP=true
 
-ENTRYPOINT ["java", "-jar","myapp-1.0-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar","myapp-1.0-SNAPSHOT.jar","-Djgroups.configurationFile=/app/jgroups-tcp.xml"]

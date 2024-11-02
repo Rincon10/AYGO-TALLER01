@@ -61,7 +61,17 @@ vamos a crear la imagen docker:
 docker build --tag rincon10/servicio-chats:1.0 .
 ```
 
+y la pucblicamos al docker repository
 
+```bash
+docker login
+```
+
+y luego 
+
+```bash
+docker push rincon10/servicio-chats:1.0
+```
 
 entonces ahora ejecutamos  la imagen que se creo a partir del dockerFile que tenemos
 
@@ -75,5 +85,6 @@ intancia 2
 docker run -i --network "host" --name instancia2-servicio-chat rincon10/servicio-chats:1.0
 ```
 
-si todo sale bien veriamos que el contenedor se esta ejecutando de manera correcta con 
+si todo sale bien veriamos que el contenedor se esta ejecutando de manera correcta
 
+![alt text](docs/img/02.png)
